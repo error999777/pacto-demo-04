@@ -1,0 +1,16 @@
+.team-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.team-choice-field { min-width: 0; }
+.team-form > label { max-width: 480px; }
+.team-custom-field { margin-top: 12px; }
+.team-access-hint { margin: 6px 0 20px; }
+.team-person > div { min-width: 0; }
+.team-person h3, .team-person p { overflow-wrap: anywhere; }
+.team-person p { margin: 6px 0; font-size: 14px; }
+.team-form .choice-text { overflow-wrap: anywhere; }
+@media (max-width: 800px) {
+  .team-fields { grid-template-columns: 1fr; gap: 0; }
+}

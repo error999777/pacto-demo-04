@@ -1,0 +1,17 @@
+.crm-task-link { font-size: 11px; font-weight: 500; color: var(--quiet); margin-left: auto; white-space: nowrap; }
+.crm-task-form { margin-top: 14px; padding: 16px; border: 1px solid var(--accent-line); border-radius: 10px; background: var(--surface-soft); }
+.crm-task-form[hidden] { display: none; }
+[data-crm-action="edit"][aria-expanded="true"] { display: none; }
+.crm-task-form label { margin-top: 12px; }
+.crm-task-form h3 { margin-top: 0; }
+.crm-edit-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.crm-demo-note { line-height: 1.5; margin: 10px 0 0; }
+.crm-discussion-content { padding: 4px 14px 14px; }
+.crm-comments article { border-bottom: 1px solid var(--border); padding: 12px 0; font-size: 13px; }
+.crm-comments article p { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.crm-comments time { color: var(--quiet); font-size: 11px; }
+#crm-comment-form label { margin-top: 12px; }
+#crm-comment-form textarea { min-height: 70px; }
+#crm-comment-form button { font-size: 13px; }
+.crm-description { white-space: pre-wrap; line-height: 1.6; }
+@media (max-width: 1100px) { .crm-task-link { margin-left: 0; } }

@@ -1,0 +1,44 @@
+.feedback-dialog { width: min(500px, calc(100% - 24px)); max-height: calc(100dvh - 32px); padding: 22px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface, #fff); color: var(--ink); box-shadow: 0 24px 80px #15243b38; }
+.feedback-dialog::backdrop { background: #1c2a4259; }
+.feedback-dialog.feedback-capturing { visibility: hidden; }
+:root .feedback-dialog.feedback-capturing::backdrop { background: transparent; }
+.feedback-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.feedback-header h2 { margin: 0; font-size: 20px; }
+.feedback-header button { border: 0; padding: 5px 10px; font-size: 24px; line-height: 1; }
+.feedback-dialog label { margin-top: 12px; }
+.feedback-dialog label select, .feedback-dialog label textarea { margin-top: 6px; }
+.feedback-dialog textarea { min-height: 88px; }
+.feedback-attachments { margin-top: 14px; }
+.feedback-attachment-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.feedback-attachment-actions button { padding: 7px 10px; font-size: 12px; }
+.feedback-image-hint { font-size: 11px; line-height: 1.5; margin: 7px 0; }
+.feedback-images { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 8px 0; }
+.feedback-images:empty, .feedback-attachment-status:empty { display: none; }
+.feedback-images figure { position: relative; min-width: 0; margin: 0; }
+.feedback-images a { display: block; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface-soft); }
+.feedback-images img { display: block; width: 100%; height: 64px; object-fit: contain; }
+.feedback-images figcaption { margin-top: 4px; font-size: 11px; color: var(--quiet); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root .feedback-images [data-feedback-remove] { position: absolute; top: 4px; right: 4px; display: grid; place-items: center; width: 28px; height: 28px; min-height: 28px; padding: 0; border-radius: 50%; background: var(--surface); color: var(--ink); font-size: 20px; }
+.feedback-attachment-status { font-size: 12px; margin: 6px 0; }
+.feedback-dialog .form-error { white-space: pre-line; }
+.feedback-context { padding: 8px 12px; margin: 8px 0; background: var(--surface-soft); font-size: 12px; line-height: 1.5; border-radius: 8px; overflow-wrap: anywhere; }
+.feedback-context strong { margin-right: 8px; }
+.feedback-context span { display: block; color: var(--quiet); margin-top: 3px; }
+.feedback-local-note { font-size: 12px; line-height: 1.5; margin: 8px 0; }
+.feedback-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 12px; }
+.feedback-footer button { min-height: 42px; }
+.feedback-history { margin: 18px 0 0; }
+.feedback-history summary { font-size: 13px; padding: 10px 12px; }
+.feedback-history article { padding: 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
+.feedback-history article:last-child { border-bottom: 0; }
+.feedback-history p, .feedback-saved-message p { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
+.feedback-history time, .feedback-history small { color: var(--quiet); font-size: 11px; overflow-wrap: anywhere; }
+.feedback-history small { display: block; }
+.feedback-history button { font-size: 12px; margin-top: 10px; padding: 6px 10px; }
+.feedback-success { padding: 14px; margin: 18px 0; border-radius: 10px; background: var(--accent-soft); }
+.feedback-success h3 { margin: 0 0 8px; font-size: 16px; }
+.feedback-success p { margin: 0; line-height: 1.5; font-size: 13px; }
+.feedback-saved-message { font-size: 14px; max-height: 180px; overflow: auto; }
+.feedback-copy-status:empty { display: none; }
+:root[data-theme="dark"] .feedback-dialog::backdrop { background: #080d16ae; }
+@media (max-width: 500px) { .feedback-dialog { padding: 16px; } .feedback-footer button { font-size: 13px; padding: 9px 12px; } }

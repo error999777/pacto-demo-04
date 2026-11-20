@@ -1,0 +1,72 @@
+/* Shared spacing for prototype 04. Preserve task density and status placement. */
+:root { --space-field: 16px; --space-panel: 20px; --space-section: 24px; }
+html { scrollbar-gutter: stable; }
+:root main { padding: 24px 32px 32px; }
+:root .top { gap: 16px; flex-wrap: wrap; }
+:root #app > h1 { margin: 24px 0 8px; }
+:root #app > h1 + p { margin: 0 0 20px; }
+:root #app > button:first-child { margin-top: 20px; }
+:root #app > button:first-child + h1 { margin-top: 16px; }
+:root .panel { padding: var(--space-panel); margin-block: 16px; min-width: 0; }
+:root .panel > :first-child { margin-top: 0; }
+:root .panel > :last-child { margin-bottom: 0; }
+:root .panel h2 { margin-block: 0 12px; line-height: 1.35; }
+:root .panel p { margin-block: 8px 16px; }
+:root .grid { gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+:root .grid > .panel { margin: 0; }
+:root #app > .grid { margin-block: 16px; }
+:root .panel > .grid { margin-block: 16px; }
+:root .grid > *, :root .split-form > *, :root .detail > *, :root .row > div { min-width: 0; }
+:root .split-form { gap: var(--space-section); grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+:root .detail { gap: 20px; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
+:root .detail > .panel { margin-top: 0; }
+:root .field-section, :root .source-form .call-materials { padding: 16px; margin-block: 16px; }
+:root .split-form > .field-section, :root .source-form .call-materials { margin-top: 0; }
+:root .field-section > :last-child { margin-bottom: 0; }
+:root .panel label { margin-block: var(--space-field) 8px; }
+:root .panel label > :is(input, textarea, .choice) { margin-top: 6px; }
+:root .panel .grid > label { margin-block: 0; }
+:root .panel .check { margin-block: 12px; }
+:root .panel .check input { margin-top: 0; flex-shrink: 0; }
+:root .actions { margin-top: 24px; padding-top: 16px; gap: 12px; flex-wrap: wrap; }
+:root .execution-actions { margin-top: 20px; padding-top: 16px; gap: 8px; }
+:root .notification-block { margin-top: 16px; padding: 16px; }
+:root .notification-block p { margin-block: 8px 0; }
+:root .tabs { margin-block: 16px; gap: 8px; }
+:root .number { margin-block: 12px; }
+:root .stats-table :is(td, th) { padding: 12px; }
+:root .reminder-list { margin-top: 16px; }
+:root :is(.reminder-dialog, .feedback-dialog) { padding: 20px; overscroll-behavior: contain; }
+:root :is(.reminder-footer, .feedback-footer) { gap: 12px; margin-top: 16px; padding-top: 16px; flex-wrap: wrap; }
+:root .reminder-mode label { margin: 0; }
+:root :is(.reminder-time-row, .execution-facts dd, .feedback-header h2) { min-width: 0; }
+:root .compact-card { gap: 16px; }
+:root .card-side-bottom { gap: 12px; flex-wrap: wrap; }
+:root .card-side .badge { white-space: normal; }
+:root .team-fields { gap: 16px; }
+:root .team-person p { margin-block: 6px 0; }
+@media (min-width: 1000px) {
+  :root main[data-screen="Работа"] { padding-top: 16px; }
+  :root main[data-screen="Работа"] #app > h1 { margin-top: 12px; }
+  :root main[data-screen="Работа"] #app > h1 + p { margin-bottom: 8px; }
+}
+@media (min-width: 801px) and (max-width: 1100px) {
+  :root .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :root .detail, :root .split-form { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 800px) {
+  :root main { padding: 16px; }
+  :root .grid, :root .detail, :root .split-form { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  :root .panel { padding: 16px; }
+  :root #app > h1 { margin-top: 20px; }
+  :root .top > .row { gap: 8px; }
+  :root .top .choice.role { flex: 1 1 140px; width: auto; }
+  :root .top > .row > button { flex: 1 1 130px; }
+  :root .sidebar-footer { flex-wrap: wrap; }
+  :root :is(.reminder-dialog, .feedback-dialog) { padding: 16px; }
+  :root .execution-facts > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  :root .card-side-bottom { gap: 8px 12px; }
+  :root .stats-table { min-width: 480px; }
+  :root .steps { gap: 8px; }
+  :root .team-fields { gap: 0; }
+}

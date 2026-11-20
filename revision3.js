@@ -1,5 +1,6 @@
 /* Presentation-only revision. Original forms remain the source of their values. */
-let workPage=1, evidencePage=1, workSize=8, evidenceSize=8, workEmployee='', workSource='';
+const defaultWorkSize = 4;
+let workPage=1, evidencePage=1, workSize=defaultWorkSize, evidenceSize=8, workEmployee='', workSource='';
 let workScope='', evidenceScope='';
 const fifthExample={...structuredClone(initial[0]), id:5, title:'Согласовать дату демонстрации',
   client:'Алексей · Орион', source:'Telegram', time:'14 ноября, 12:10', quote:'Согласуем дату демонстрации завтра.',
@@ -182,5 +183,5 @@ document.addEventListener('change',e=>{
   if(kind==='work'){workSize=+e.target.value;workPage=1;}else{evidenceSize=+e.target.value;evidencePage=1;}
   render();
 });
-$('#reset').addEventListener('click',()=>{workPage=1;evidencePage=1;workEmployee='';workSource='';render();});
+$('#reset').addEventListener('click',()=>{workPage=1;workSize=defaultWorkSize;evidencePage=1;workEmployee='';workSource='';render();});
 render();

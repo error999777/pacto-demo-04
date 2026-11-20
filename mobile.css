@@ -1,0 +1,161 @@
+.sections-toggle, .mobile-table-hint { display: none; }
+.sections-panel { display: contents; }
+
+@media (max-width: 800px) {
+  html { scroll-padding-block-start: 72px; scrollbar-gutter: auto; }
+  :root aside {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 5;
+    padding: 8px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    overflow: visible;
+  }
+  .sidebar-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  :root aside h2 { font-size: 22px; }
+  .sections-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-block-size: 44px;
+    padding: 6px 12px;
+    anchor-name: --pacto-sections;
+  }
+  .sections-toggle span[aria-hidden] { font-size: 22px; line-height: 1; }
+  :root .sections-toggle[aria-expanded="true"] {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: var(--accent-line);
+  }
+  .sections-panel { display: block; }
+  .sections-panel[hidden] { display: none; }
+  .sections-panel[popover] {
+    display: none;
+    position: fixed;
+    inset: auto 12px auto auto;
+    inset-block-start: 68px;
+    inset-block-start: calc(anchor(--pacto-sections bottom) + 8px);
+    inline-size: min(23rem, calc(100% - 24px));
+    max-block-size: calc(100vh - 80px);
+    max-block-size: calc(100dvh - 80px);
+    margin: 0;
+    padding: 8px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: 0 12px 34px #101b3326;
+  }
+  .sections-panel:popover-open { display: block; }
+  .sections-panel:not([popover]) {
+    max-block-size: calc(100vh - 72px);
+    max-block-size: calc(100dvh - 72px);
+    overflow: auto;
+    padding: 6px 0;
+  }
+  :root #nav {
+    display: grid;
+    gap: 2px;
+    overflow: visible;
+  }
+  :root #nav button {
+    margin: 0;
+    min-block-size: 44px;
+    width: 100%;
+    white-space: normal;
+    padding: 9px 12px;
+  }
+  :root #nav [aria-current="page"] {
+    box-shadow: inset 3px 0 var(--accent);
+    font-weight: 750;
+  }
+  :root .sidebar-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 6px;
+    padding: 6px 0 0;
+  }
+  :root .sidebar-footer button { width: 100%; min-block-size: 44px; }
+
+  :root .top { gap: 10px; }
+  :root .top > .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: 100%;
+    gap: 8px;
+  }
+  :root .top .choice.role { width: 100%; min-width: 0; }
+  .top button { min-block-size: 44px; }
+  :root #app > h1 { font-size: 26px; text-wrap: balance; }
+
+  :root .work-toolbar { gap: 8px; }
+  :root .work-tabs {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 6px;
+  }
+  :root .work-tabs button {
+    grid-column: span 3;
+    min-block-size: 44px;
+    padding: 6px;
+    font-size: .8125rem;
+    line-height: 1.2;
+  }
+  :root .work-tabs button:nth-child(2),
+  :root .work-tabs button:nth-last-child(-n + 2) { grid-column: span 6; }
+  :root .work-toolbar > button { align-self: stretch; min-block-size: 44px; }
+  :root .work-tools .source-filter { min-width: 0; }
+  :root .source-filter .choice-trigger,
+  :root .searchbox input { min-block-size: 44px; }
+  :root .card-side button, :root .evidence-row button { min-block-size: 44px; }
+  :root .compact-card h2 { overflow-wrap: anywhere; }
+  :root .source-line > .crm-task-link { white-space: normal; }
+  :root .page-numbers button { min-block-size: 44px; height: auto; min-inline-size: 44px; }
+  :root .page-numbers { justify-content: flex-start; }
+
+  :root .reminder-actions button,
+  :root .feedback-attachment-actions button,
+  :root .feedback-header button,
+  :root .reminder-dialog [data-reminder-close][aria-label],
+  :root .execution-actions button { min-block-size: 44px; }
+  .feedback-header button, .reminder-dialog [data-reminder-close][aria-label] { min-inline-size: 44px; }
+  .reminder-dialog #reminder-form > .row { flex-wrap: nowrap; gap: 6px; }
+  .reminder-dialog h2 { font-size: 18px; }
+  .reminder-dialog [data-reminder-close][aria-label] { flex: none; }
+  :root .reminder-time-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+  .reminder-dialog label { margin-top: 8px; }
+  :root :is(.panel, .searchbox, dialog) :is(textarea, select, input:not([type="checkbox"], [type="radio"])) {
+    font-size: 16px;
+    max-inline-size: 100%;
+  }
+  :root .panel input[type="file"] { font-size: 13px; padding: 8px; }
+  :root .panel input[type="file"]::file-selector-button {
+    min-block-size: 36px;
+    padding: 6px 8px;
+    margin-inline-end: 6px;
+  }
+  .table-wrap:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+}
+
+@media (max-width: 600px) {
+  .mobile-table-hint { display: block; font-size: 12px; }
+  :root .reminder-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) minmax(0, 1.5fr);
+  }
+}
+@media (max-width: 360px) {
+  :root main { padding-inline: 12px; }
+  :root .source-form,
+  :root .source-form :is(.call-materials, .field-section) { padding: 12px; }
+  :root .reminder-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :root .reminder-actions button:last-child { grid-column: 1 / -1; }
+}

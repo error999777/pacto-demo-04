@@ -208,7 +208,10 @@ async function openFeedback(trigger) {
     objectUrls.forEach(url => URL.revokeObjectURL(url));
     document.body.style.overflow = previousOverflow;
     dialog.remove();
-    if (trigger?.isConnected) trigger.focus({ preventScroll: true });
+    if (trigger?.isConnected) {
+      const returnTarget = trigger.getClientRects().length ? trigger : $('#sections-toggle');
+      returnTarget?.focus({ preventScroll: true });
+    }
   });
   document.body.style.overflow = 'hidden';
   dialog.showModal();
